@@ -1,0 +1,16 @@
+import java.util.*;
+
+class FirstLetterWithM {
+    public static void main(String[] args) {
+
+        List<String> list = List.of("Cat","Monkey","Dog","Mango","Mouse");
+
+        String result =
+        list.stream()
+            .filter(s -> s.startsWith("M"))
+            .findFirst()
+            .orElse(null);
+
+        System.out.println(result);
+    }
+}
