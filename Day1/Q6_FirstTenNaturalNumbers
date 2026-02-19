@@ -1,0 +1,10 @@
+
+import java.util.stream.*;
+
+class FirstTenNaturalNumbers {
+    public static void main(String[] args) {
+   IntStream.rangeClosed(1,10)
+            .forEach(System.out::println);
+
+    }
+}
