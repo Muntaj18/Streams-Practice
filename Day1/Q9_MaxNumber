@@ -1,0 +1,12 @@
+import java.util.List;
+import java.util.stream.*;
+class MaxNumber {
+    public static void main(String[] args) {
+List<Integer> list=List.of(3,5,12,60,5);
+int result=
+list.stream()
+.max(Integer::compareTo)
+.orElseThrow();
+System.out.println(result);
+    }
+}
