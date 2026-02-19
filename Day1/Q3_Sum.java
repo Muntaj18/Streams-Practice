@@ -1,11 +1,12 @@
 class Sum{
     public static void main(String[] args) {
- List<String> list=List.of("Sam","john","Sara","Alex");
-List<String> result=
-list.stream()
-    .filter(n->n.startsWith("S"))
-    .toList();
-System.out.println(result);
+ class Main {
+    public static void main(String[] args) {
+        List<Integer> list=List.of(5,10,15);
+        int sum=list.stream()
+                     .reduce(0,Integer::sum);
+System.out.println(sum);
 
     }
 }
+
