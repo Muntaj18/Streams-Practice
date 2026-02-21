@@ -1,0 +1,19 @@
+
+import java.util.*;
+import java.util.stream.*;
+class ReverseStringByKeppingInsertionOrder {
+    public static void main(String[] args) {
+        
+        String str="java is fun";
+        
+        String result=
+        Arrays.stream(str.split(" "))
+        .map(s->new StringBuilder(s).reverse())
+        .collect(Collectors.joining(" "));
+        
+        System.out.println(result);
+         
+    }
+}
+
+ 
