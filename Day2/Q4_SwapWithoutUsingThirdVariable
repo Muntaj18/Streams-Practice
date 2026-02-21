@@ -1,0 +1,26 @@
+
+import java.util.*;
+import java.util.stream.*;
+class SwapWithoutUsingThirdVaraibale {
+    public static void main(String[] args) {
+        
+         char c1='1';
+         char c2='2';
+         
+         char[] swapped=
+         Stream.of(c1,c2)
+         .collect(Collectors.collectingAndThen(Collectors.toList(),l-> new char[]{
+             l.get(1),l.get(0)
+         }));
+         
+         c1=swapped[0];
+         c2=swapped[1];
+         
+         System.out.println(c1 + " " +c2);
+         
+    }
+        
+      
+}
+
+ 
