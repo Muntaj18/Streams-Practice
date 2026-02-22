@@ -1,0 +1,18 @@
+
+import java.util.*;
+import java.util.stream.*;
+class sortByLengthThenAlphabetically{
+    public static void main(String[] args) {
+        
+        List<String> words = List.of("apple", "bat", "cat", "ball", "dog", "elephant");
+        
+        List<String> result=
+        words.stream()
+        .sorted(Comparator.comparingInt(String::length)
+        .thenComparing(Comparator.naturalOrder()))
+        .toList();
+        
+        System.out.println(result);
+        
+    }
+}
