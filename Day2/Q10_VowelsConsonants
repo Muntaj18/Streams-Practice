@@ -1,0 +1,22 @@
+import java.util.*;
+import java.util.stream.*;
+class VowelsConsonants {
+    public static void main(String[] args) {
+        
+        String str="HelloWorld";
+        
+        Map<Boolean, List<Character>> result=
+        str.chars()
+        .mapToObj(c->(char)c)
+        .filter(Character::isLetter)
+        .collect(Collectors.groupingBy(c->"aeiouAEIOU"
+        .indexOf(c)>=0
+        ));
+        
+        List<Character> Vowels=result.get(true);
+        List<Character> Consonants=result.get(false);
+        
+        System.out.println("Vowels:"+Vowels);
+        System.out.println("Consonants:"+Consonants);
+    }
+}
