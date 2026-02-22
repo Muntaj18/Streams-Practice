@@ -1,0 +1,17 @@
+
+import java.util.*;
+import java.util.stream.*;
+class LongestString{
+    public static void main(String[] args) {
+      List<String> words = List.of("apple", "bat", "cat", "ball", "dog", "elephant");
+      
+      String result=
+      words.stream()
+      .max(Comparator.comparingInt(String::length))
+      .orElse(null);
+      
+      System.out.println(result);
+
+        
+    }
+}
