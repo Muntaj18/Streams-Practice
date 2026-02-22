@@ -1,0 +1,21 @@
+
+import java.util.*;
+import java.util.stream.*;
+class MissingNumbers{
+    public static void main(String[] args) {
+       List<Integer> list=List.of(1,3,5,7);
+       int N=7;
+       Set<Integer> numberset=new HashSet<>(list);
+       
+       List<Integer> result=
+      IntStream.rangeClosed(1,N)
+      .filter(n->!numberset.contains(n))
+      .boxed()
+      .toList();
+      
+      System.out.println(result);
+       
+
+        
+    }
+}
