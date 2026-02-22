@@ -1,0 +1,22 @@
+
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+        
+       List<Integer> list = List.of(1, 2, 2, 3, 3, 3, 4, 2, 1);
+       
+      Integer result= list.stream()
+       .collect(Collectors.groupingBy(n->n,Collectors.counting()))
+       .entrySet()
+       .stream()
+       .min(Map.Entry.comparingByValue())
+       .map(Map.Entry::getKey)
+       .orElse(null);
+       
+       System.out.println(result);
+       
+
+        
+    }
+}
