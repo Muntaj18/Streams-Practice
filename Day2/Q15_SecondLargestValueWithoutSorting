@@ -1,0 +1,33 @@
+
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+        
+        List<Integer> list = List.of(7, 2, 9, 4, 1, 6, 9);
+        int second=list.stream()
+        .distinct()
+        .reduce(
+            new int[]{Integer.MIN_VALUE,Integer.MIN_VALUE},
+            (acc,n)->{
+                if(n>acc[0])
+                {
+                    acc[1]=acc[0];
+                    acc[0]=n;
+                }else if(n>acc[1])
+                {
+                    acc[1]=n;
+                }
+                return acc;
+            },
+            (a,b)->a
+            )[1];
+            
+        if(second==Integer.MIN_VALUE)
+        {
+                System.out.println("no second largest value is present");
+        }else{
+                System.out.println("second largest value:"+second);
+            }
+    }
+}
