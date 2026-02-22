@@ -1,0 +1,19 @@
+
+import java.util.*;
+import java.util.stream.*;
+class ListOfIntegerToListOfString{
+    public static void main(String[] args) {
+        
+      List<Integer> list= List.of(1,2,3,45,56,7,78);
+      
+      List<String> result=
+      list.stream()
+      .map(x->String.valueOf(x))
+      .toList();
+      
+      System.out.println(result);
+       
+
+        
+    }
+}
