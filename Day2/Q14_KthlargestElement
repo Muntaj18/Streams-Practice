@@ -1,0 +1,18 @@
+import java.util.*;
+import java.util.stream.*;
+class KthlargestElement {
+    public static void main(String[] args) {
+        
+        List<Integer> list = List.of(7,2,9,4,1,6);
+        int k = 2;
+        
+        Integer result=
+        list.stream()
+        .sorted(Comparator.reverseOrder())
+        .skip(k-1)
+        .findFirst()
+        .orElse(null);
+        
+        System.out.println(result);
+    }
+}
