@@ -1,0 +1,25 @@
+
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+        
+       List<Integer> list = List.of(1, 2, 3, 2, 2, 5, 2);
+       
+       int n=list.size();
+       
+      List<Integer> result=
+      list.stream()
+      .collect(Collectors.groupingBy(c->c,Collectors.counting()))
+      .entrySet()
+      .stream()
+      .filter(e->e.getValue()>n/2)
+      .map(Map.Entry::getKey)
+      .toList();
+       
+       System.out.println(result);
+       
+
+        
+    }
+}
