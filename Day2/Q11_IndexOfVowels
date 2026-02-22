@@ -1,0 +1,15 @@
+import java.util.*;
+import java.util.stream.*;
+class IndexOfVowels {
+    public static void main(String[] args) {
+        
+        String str="HelloWorld";
+        List<Integer> index=
+        IntStream.range(0,str.length())
+        .filter(n->"aeiouAEIOU".indexOf(str.charAt(n))>=0)
+        .boxed()
+        .toList();
+        
+        System.out.println(index);
+    }
+}
