@@ -1,0 +1,20 @@
+//Find first element whose frequency > 1
+
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+      List<Integer> list = List.of(1, 2, 3, 2, 3, 4, 5);
+      
+      Map<Integer,Long> freq=
+      list.stream()
+      .collect(Collectors.groupingBy(n->n,Collectors.counting()));
+      Optional<Integer> result=
+      list.stream()
+      .filter(n->freq.get(n)>1)
+      .findFirst();
+      
+       
+          System.out.println(result.orElse(null));
+    }
+}
