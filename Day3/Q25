@@ -1,0 +1,21 @@
+//Detect duplicate characters in string preserving order
+
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+        String str="programming";
+        
+        Set<Character> seen=new HashSet<>();
+        
+        List<Character> result= 
+        str.chars()
+        .mapToObj(c->(char)c)
+        .filter(n->!seen.add(n))
+        .distinct()
+        .toList();
+      
+       
+          System.out.println(result);
+    }
+}
