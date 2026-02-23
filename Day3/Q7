@@ -1,0 +1,17 @@
+//From list of strings → return only palindromes
+
+
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+         List<String> list = List.of("madam","hello","level","java","radar");
+         
+         List<String> result=
+         list.stream()
+         .filter(n->n.equals(new StringBuilder(n).reverse().toString()))
+         .toList();
+      
+          System.out.println(result);
+    }
+}
