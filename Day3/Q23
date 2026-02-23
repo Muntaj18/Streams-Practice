@@ -1,0 +1,17 @@
+//Concatenate only strings starting with vowel
+
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+        List<String> words = List.of("apple", "banana", "pear", "apricot", "kiwi");
+        
+        String result=
+        words.stream()
+        .filter(e->e.toLowerCase().matches("^[aeiou].*"))
+        .collect(Collectors.joining(" "));
+      
+       
+          System.out.println(result);
+    }
+}
