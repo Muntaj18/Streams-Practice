@@ -1,0 +1,16 @@
+//Sort strings by last character
+
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+        List<String> list = List.of("apple", "banana", "kiwi", "grape");
+        List<String> result=
+        list.stream()
+        .sorted(Comparator.comparing(s->s.charAt(s.length()-1)))
+        .toList();
+
+
+          System.out.println(result);
+    }
+}
