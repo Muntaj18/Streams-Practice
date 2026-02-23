@@ -1,0 +1,24 @@
+//Sort words by length DESC then alphabetically
+
+
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+       
+        List<String> words = List.of("apple", "bat", "banana", "dog", "car", "apricot");
+        
+        List<String> result=
+        words.stream()
+        .sorted(Comparator.comparingInt(String::length)
+        .reversed()
+        .thenComparing(s->s)
+        )
+        .toList();
+
+
+
+
+          System.out.println(result);
+    }
+}
