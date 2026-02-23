@@ -1,0 +1,21 @@
+//Find element whose frequency equals its value
+
+
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+       List<Integer> list = List.of(1, 2, 2, 3, 3, 3, 4, 4, 4, 4);
+       Map<Integer,Long> freq=
+       list.stream()
+       .collect(Collectors.groupingBy(n->n,Collectors.counting()));
+       List<Integer> result=
+       freq.entrySet()
+       .stream()
+       .filter(e->e.getKey().equals(e.getValue().intValue()))
+       .map(Map.Entry::getKey)
+       .toList();
+       
+          System.out.println(result);
+    }
+}
