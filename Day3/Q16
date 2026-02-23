@@ -1,0 +1,32 @@
+// element with 2nd highest frequency
+
+
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+        List<Integer> list = List.of(1, 2, 2, 3, 3, 3, 4, 4);
+        
+        Map<Integer,Long> freq=
+        list.stream()
+        .collect(Collectors.groupingBy(n->n,Collectors.counting()));
+        List<Integer> result=
+        freq.entrySet()
+        .stream()
+        .sorted(Map.Entry.<Integer,Long>comparingByValue(Comparator.reverseOrder()))
+        .map(Map.Entry::getValue)
+        .skip(1)
+        .findFirst()
+        .map(
+            f->
+                freq.entrySet()
+                .stream()
+                .filter(e->e.getValue().equals(f))
+                .map(Map.Entry::getKey)
+                .toList()
+                )
+            .orElse(Collections.emptyList());
+          System.out.println(result);
+    }
+}
+
