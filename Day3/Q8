@@ -1,0 +1,21 @@
+//Convert list of sentences → list of all unique words
+
+
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+         List<String> list= List.of(
+             "Java is fun",
+                "Streams are powerful",
+                "Java streams are useful"
+             );
+             List<String> result=
+             list.stream()
+             .flatMap(n->Arrays.stream(n.split(" ")))
+             .map(String::toLowerCase)
+             .distinct()
+             .toList();
+          System.out.println(result);
+    }
+}
