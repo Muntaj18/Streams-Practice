@@ -1,0 +1,18 @@
+//Find longest string using reduce
+
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+        List<String> words = List.of("apple", "banana", "pear", "apricot", "kiwi");
+
+     
+      String result=
+      words.stream()
+      .reduce((s1,s2)->s1.length()>=s2.length()?s1:s2)
+      .orElse(" ");
+      
+       
+          System.out.println(result);
+    }
+}
