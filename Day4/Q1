@@ -1,0 +1,24 @@
+//Find pair with maximum sum
+
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+        List<Integer> list = List.of(1, 3, 5, 2, 4);
+        
+        Optional<int[]> result=
+        list.stream()
+        .flatMap(a->list.stream()
+        .map(b->new int[]
+        {a,b}))
+        .filter(pair->pair[0]<pair[1])
+        .max(Comparator.comparingInt(pair->pair[0]+pair[1]));
+        
+        result.ifPresent(pair->
+            System.out.println(pair[0] + " "+ pair[1]));
+            
+            
+       
+          
+    }
+}
