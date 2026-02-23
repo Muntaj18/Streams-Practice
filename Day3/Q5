@@ -1,0 +1,23 @@
+//Group anagrams together
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+        List<String> words = List.of("eat","tea","tan","ate","nat","bat");
+        
+      Map<String,  List<String>>result=
+      words.stream()
+      .collect(Collectors.groupingBy(
+          word->{
+              char[] arr=word.toCharArray();
+              Arrays.sort(arr);
+              return new String(arr);
+          }
+          ));
+          System.out.println(result.values());
+      
+        
+
+
+    }
+}
