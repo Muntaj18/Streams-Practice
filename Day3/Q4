@@ -1,0 +1,17 @@
+//Convert list → frequency-sorted list (most frequent first)
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+        List<Integer> list=List.of(1,3,4,3,2,1,4,3);
+        
+        Map<Integer,Long> freq=
+        list.stream()
+        .collect(Collectors.groupingBy(n->n,Collectors.counting()));
+        List<Integer> result=
+        list.stream()
+        .sorted((a,b)->Long.compare(freq.get(b),freq.get(a)))
+        .toList();
+         System.out.println(result);
+    }
+}
