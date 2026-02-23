@@ -1,0 +1,23 @@
+//Custom sort → even numbers first, then odd
+
+
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+       
+       List<Integer> numbers = List.of(5, 2, 7, 8, 1, 4, 3);
+       
+       List<Integer> result=
+       numbers.stream()
+       .sorted((a,b)->
+       {
+           if(a%2==0 && b%2!=0) return -1; //even comes first
+           if(a%2!=0 && b%2==0) return 1; //odd 
+           return 0;
+       })
+       .toList();
+
+          System.out.println(result);
+    }
+}
