@@ -1,0 +1,20 @@
+//Extract digits from string list and return as integers\
+
+
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+         List<String> list = List.of("a1b2", "c3", "9x", "hello5");
+         List<Integer> result=
+         list.stream()
+         .flatMap(s->s.chars()
+         .filter(Character::isDigit)
+         .mapToObj(c->c-'0')
+         )
+         .toList();
+
+
+          System.out.println(result);
+    }
+}
