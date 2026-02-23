@@ -1,0 +1,20 @@
+//Merge two lists, remove duplicates, sort descending
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+       List<List<Integer>> list=List.of(
+           List.of(1,2,3,4,6),
+           List.of(4,5,6,7)
+           );
+           
+           List<Integer> sum=
+           list.stream()
+           .flatMap(List::stream)
+           .distinct()
+           .sorted(Comparator.reverseOrder())
+           .toList();
+           
+           System.out.println(sum);
+    }
+}
