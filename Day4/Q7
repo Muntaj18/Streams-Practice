@@ -1,0 +1,32 @@
+// Sort words by:
+Word length (descending)
+If length ties → frequency (descending)
+If frequency ties → alphabetical (ascending)
+input: "code decode recode codec codex decode code decode coder coder coder"
+expected: 
+decode
+recode
+coder
+codec
+codex
+code
+import java.util.stream.*;
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        String str="code decode recode codec codex decode code decode coder coder coder";
+        
+        Map<String, Long> freq =
+            Arrays.stream(str.split(" "))
+                  .collect(Collectors.groupingBy(w -> w, Collectors.counting()));
+        List<String> result =
+            freq.keySet() 
+                .stream()
+                .sorted(Comparator.comparingInt(String::length).reversed() 
+                    .thenComparing(Comparator.comparingLong(freq::get).reversed()) 
+                    .thenComparing(s -> s))
+                .toList();
+
+        result.forEach(System.out::println);
+    }
+}
