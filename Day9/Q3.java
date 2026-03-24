@@ -2,7 +2,7 @@
 import java.util.Arrays;
 import java.util.List;
 
-public class P6 {
+public class Main {
     public static void main(String[] args) {
         List<String> sentences = List.of(
                 "Java is powerful",
