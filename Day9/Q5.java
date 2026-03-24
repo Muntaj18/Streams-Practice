@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class P8 {
+public class Main {
     public static void main(String[] args) {
 
         List<String> sentences = List.of(
