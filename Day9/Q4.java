@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
-public class P7 {
+public class Main {
     public static void main(String[] args) {
         List<String> sentences = List.of(
 
