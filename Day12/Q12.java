@@ -3,7 +3,7 @@ import java.util.*;
 import java.util.stream.Stream;
 
 public class Main{
-    public static int productElements(List<Integer> list)
+    public static int maxElement(List<Integer> list)
     {
         return list.stream()
         .max(Integer::compareTo)
@@ -13,7 +13,7 @@ public class Main{
     {
         List<Integer> list=List.of(1,2,3,4,5,6,7,8);
         
-        int result=productElements(list);
+        int result=maxElement(list);
         System.out.println(result);
     }
 }
